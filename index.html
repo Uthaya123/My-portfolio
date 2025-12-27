@@ -3,413 +3,509 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Dr. Uthayakumar J., Assistant Professor and Researcher in Computer Science.">
-    <title>Uthayakumar J. | Assistant Professor & Researcher</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>UTHAYAKUMAR.J - Professional Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            font-size: 0.95em;
+        }
+
+        .contact-item {
+            padding: 8px;
+        }
+
+        .contact-item strong {
+            margin-right: 5px;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .entry {
+            margin-bottom: 25px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .entry-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .entry-meta {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .entry-subtitle {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .entry-description {
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .highlights {
+            margin-top: 10px;
+        }
+
+        .highlights li {
+            margin-left: 20px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .achievements {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+        }
+
+        .achievements h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .achievements ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievements li {
+            padding: 6px 0;
+            color: #555;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .achievements li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .achievements li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .skill-category p {
+            color: #555;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            .entry-header {
+                flex-direction: column;
+            }
+            .header h1 {
+                font-size: 1.8em;
+            }
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Navigation -->
-    <header id="header">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#hero">UJ.</a>
-            </div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-list">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="hero-content" data-aos="fade-up">
-            <h3 class="greeting">Hello, I am</h3>
-            <h1 class="name">Dr. Uthayakumar J.</h1>
-            <h2 class="title">Assistant Professor & Researcher</h2>
-            <p class="tagline">Specializing in Computer Science, AI, and Data Analytics.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn primary-btn">Get In Touch</a>
-                <a href="#research" class="btn secondary-btn">View Research</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/uthayakumarj/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:uthayakumar.j89@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://vidwan.inflibnet.ac.in/profile/353641" target="_blank" aria-label="Vidwan"><i class="fas fa-university"></i></a>
-                <a href="#" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>UTHAYAKUMAR.J</h1>
+            <p>M.E. | M.I.E.I. | M.I.S.T.E. | Ph.D (Pursuing)</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email:</strong> uthayakumar.j89@gmail.com
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong> +91 9342719285 | 9442842748
+                </div>
+                <div class="contact-item">
+                    <strong>Location:</strong> Coimbatore, Tamil Nadu, India
+                </div>
+                <div class="contact-item">
+                    <strong>LinkedIn:</strong> linkedin.com/in/uthayakumarj/
+                </div>
+                <div class="contact-item">
+                    <strong>Scopus ID:</strong> 58029242800
+                </div>
+                <div class="contact-item">
+                    <strong>ORCID:</strong> 0000-0002-8516-1975
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-right">
-                <span>01.</span>
-                <h2>About Me</h2>
+        <!-- Content -->
+        <div class="content">
+            <!-- Career Objectives -->
+            <div class="section">
+                <div class="section-title">Professional Objective</div>
+                <p>Dedicated educator and researcher with 9+ years of experience in academia and IT industry, seeking challenging opportunities to leverage expertise in Computer Science, AI, IoT, and Data Science while advancing research and mentoring excellence.</p>
             </div>
-            <div class="about-content">
-                <div class="about-text" data-aos="fade-up">
-                    <p>
-                        I am dedicated academic professional embarked on a journey in Computer Science Engineering. 
-                        My objective is to seek a challenging position on the cutting edge of the High-Tech world, 
-                        where I can maximize my performance by learning from others and making a positive impact 
-                        through continuous development.
-                    </p>
-                    <p>
-                        With a Ph.D. confirmation in Information and Communication Engineering from Anna University 
-                        and over a decade of experience across industry and academia, I strive to bridge the gap 
-                        between theoretical knowledge and practical application.
-                    </p>
 
-                    <div class="personal-details">
-                        <h3>Personal Details</h3>
+            <!-- Current Position -->
+            <div class="section">
+                <div class="section-title">Current Position</div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Assistant Professor (CSE)</div>
+                        <div class="entry-meta">Aug 2023 – Present</div>
+                    </div>
+                    <div class="entry-subtitle">Hindustan Institute of Technology (Autonomous), Coimbatore</div>
+                    <div class="achievements">
+                        <h3>Key Responsibilities & Achievements:</h3>
                         <ul>
-                            <li><strong>Ph.D:</strong> Confirmation (Anna University)</li>
-                            <li><strong>Location:</strong> Coimbatore, Tamil Nadu, India</li>
-                            <li><strong>Email:</strong> uthayakumar.j89@gmail.com</li>
-                            <li><strong>Languages:</strong> English, Tamil, Malayalam, Kannada, Telugu</li>
+                            <li>Teaching 12+ engineering subjects across Computer Science and AI domains</li>
+                            <li>Mentoring 8+ student cohorts across semesters with strong pedagogical approach</li>
+                            <li>Tutor for multiple years and semesters (2nd-4th years)</li>
+                            <li>Expertise in NAAC, NBA accreditation, and OBE frameworks</li>
+                            <li>Achieved 100% in AI Analyst, 98% in Database Management Systems & Clean Coding</li>
                         </ul>
                     </div>
                 </div>
-                <div class="about-image" data-aos="fade-left">
-                     <!-- Placeholder for user image -->
-                    <div class="img-wrapper">
-                        <img src="asset_placeholder_profile.jpg" alt="Uthayakumar J." onerror="this.src='https://via.placeholder.com/300x300/112240/64ffda?text=UJ'">
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-right">
-                <span>02.</span>
-                <h2>Experience</h2>
-            </div>
-            
-            <div class="timeline" data-aos="fade-up">
-                <!-- Academic Experience -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Aug 2023 - Present</div>
-                    <div class="timeline-content">
-                        <h3>Assistant Professor (CSE)</h3>
-                        <h4>Hindustan Institute of Technology, Coimbatore</h4>
-                        <p>Handling engineering subjects, Knowledge on NAAC, NBA & OBE. Tutor for CSE batches.</p>
+            <!-- Education -->
+            <div class="section">
+                <div class="section-title">Education</div>
+                
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Doctorate in Engineering</div>
+                        <div class="entry-meta">In Progress</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Aug 2021 - July 2023</div>
-                    <div class="timeline-content">
-                        <h3>Assistant Professor (AI&DS)</h3>
-                        <h4>Dhanalakshmi Srinivasan College of Engineering, Coimbatore</h4>
-                        <p>Class Coordinator, handled subjects like Python, Data Exploration, OS, and Data Structures.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Jan 2021 - Aug 2021</div>
-                    <div class="timeline-content">
-                        <h3>Assistant Professor (IT)</h3>
-                        <h4>VSB College of Engineering, Coimbatore</h4>
-                        <p>Handled various engineering subjects for graduates.</p>
-                    </div>
+                    <div class="entry-subtitle">Anna University, Tamil Nadu | Information & Communication Engineering</div>
                 </div>
 
-                <!-- Industry Experience -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">May 2019 - Nov 2019</div>
-                    <div class="timeline-content">
-                        <h3>Technical Support Engineer</h3>
-                        <h4>Sterna Security Solutions Pvt Ltd</h4>
-                        <p>Monitored Indian Oil refinery servers and functionalities.</p>
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Master of Engineering (CSE)</div>
+                        <div class="entry-meta">May 2019</div>
                     </div>
+                    <div class="entry-subtitle">Dhanalakshmi Srinivasan College of Engineering (Autonomous) | First Class (CGPA: 7.67)</div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">May 2016 - Apr 2017</div>
-                    <div class="timeline-content">
-                        <h3>Systems Engineer</h3>
-                        <h4>Best Academy for Advanced Learning</h4>
-                        <p>Monitored and serviced system issues and electronic components.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Feb 2015 - Apr 2016</div>
-                    <div class="timeline-content">
-                        <h3>Technical Support Executive</h3>
-                        <h4>Prama HIKVision India Pvt Ltd</h4>
-                        <p>Troubleshooting CCTV cameras/devices, remote support, and customer training.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">May 2011 - Jan 2015</div>
-                    <div class="timeline-content">
-                        <h3>Hardware and Support Engineer</h3>
-                        <h4>Imacs IT Solutions</h4>
-                        <p>Computer accessories sales and servicing.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Research & Publications Section -->
-    <section id="research" class="section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-right">
-                <span>03.</span>
-                <h2>Research & Publications</h2>
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Bachelor of Engineering (CSE)</div>
+                        <div class="entry-meta">May 2012</div>
+                    </div>
+                    <div class="entry-subtitle">Coimbatore Institute of Engineering and Technology (Autonomous) | First Class (CGPA: 6.76)</div>
+                </div>
             </div>
-            
-            <div class="research-grid">
-                <div class="research-category" data-aos="fade-up">
-                    <h3><i class="fas fa-book-open"></i> Selected Journals (Scopus/WoS)</h3>
-                    <ul class="publication-list">
-                        <li>
-                            <span class="pub-title">PI Controller for Photovoltaic-fed Novel Multilevel Inverter Topologies</span>
-                            <span class="pub-journal">Indonesian Journal of Electrical Engineering and Computer Science, 2022</span>
-                        </li>
-                        <li>
-                            <span class="pub-title">5G-Optimised QoS Control Mechanism for Real-Time Data Streaming in MANETs</span>
-                            <span class="pub-journal">Vol.26, Issue 3, 2025</span>
-                        </li>
-                        <li>
-                            <span class="pub-title">Utilizing Machine Learning for Predicting Diabetes in Pregnant Women</span>
-                            <span class="pub-journal">The Bioscan, 2024 (Web of Science)</span>
-                        </li>
+
+            <!-- Research & Publications -->
+            <div class="section">
+                <div class="section-title">Research & Publications</div>
+                
+                <div class="achievements">
+                    <h3>SCOPUS Indexed Journals (2)</h3>
+                    <ul>
+                        <li>PI Controller for Photovoltaic-fed Novel Multilevel Inverter Topologies (2022)</li>
+                        <li>5G-Optimized QoS Control Mechanism for Real-Time Data Streaming in MANETs (2025)</li>
                     </ul>
                 </div>
 
-                <div class="research-category" data-aos="fade-up" data-aos-delay="100">
-                    <h3><i class="fas fa-lightbulb"></i> Patents</h3>
-                    <ul class="publication-list">
-                         <li>
-                            <span class="pub-title">Machine Learning Based IOT Device to Detect Alzheimer’s Disease</span>
-                            <span class="pub-meta">Published: 04.03.2022</span>
-                        </li>
-                        <li>
-                            <span class="pub-title">Secure IOT Device Authentication System Using Anomaly Detection</span>
-                            <span class="pub-meta">Published: 25.10.2024</span>
-                        </li>
-                        <li>
-                            <span class="pub-title">Harnessing Quantum Mechanics for Accurate Molecular Interaction Simulations</span>
-                            <span class="pub-meta">Published: 21.03.2025</span>
-                        </li>
-                         <li>
-                            <span class="pub-title">Elevating Wellness Through Intelligent Nutrition: Leveraging AI</span>
-                            <span class="pub-meta">Published: 31.05.2024</span>
-                        </li>
+                <div class="achievements">
+                    <h3>IEEE Indexed Conference Papers (5)</h3>
+                    <ul>
+                        <li>Attack Detection Using Deep Learning Strategies at STCR (2022)</li>
+                        <li>Secure Medical Data Handling in Healthcare-IoT Models at ICAIS (2023)</li>
+                        <li>Flood Assessment Using CNN and Pretrained Models at ICCCNT (2025)</li>
+                        <li>AI Driven Water Resource Management Systems at ICCDS (2025)</li>
+                        <li>IoT Ecosystems Security & Authentication at ICSDS (2025)</li>
                     </ul>
                 </div>
 
-                <div class="research-category" data-aos="fade-up" data-aos-delay="200">
-                    <h3><i class="fas fa-users"></i> Professional Memberships</h3>
-                    <ul class="membership-list">
-                        <li>International Association of Engineers (IANEG)</li>
-                        <li>International Organization for Academic and Scientific Development (IOASD)</li>
-                        <li>Institution of Engineers in India</li>
-                        <li>Indian Society for Technical Education (ISTE)</li>
-                        <li>All India Council for Technical Skill Development (AICTSD)</li>
+                <div class="achievements">
+                    <h3>Additional Publications</h3>
+                    <ul>
+                        <li>1 Web of Science Journal | 4 UGC CARE Journals | 5 Conference Papers</li>
+                        <li>8 Published Patents in AI, IoT, Blockchain, and Healthcare domains</li>
+                        <li>2 Books Published | 2 Book Chapters | 1 Copyright Registration</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-right">
-                <span>04.</span>
-                <h2>Skills & Certifications</h2>
-            </div>
-            
-            <div class="skills-wrapper">
-                <div class="skills-column" data-aos="fade-right">
-                    <h3>Technical Skills</h3>
-                    <div class="skill-tags">
-                        <span>Python</span>
-                        <span>C/C++</span>
-                        <span>PHP</span>
-                        <span>Dot.Net</span>
-                        <span>Embedded Systems</span>
-                        <span>IoT</span>
-                        <span>Machine Learning</span>
-                        <span>Data Analytics</span>
-                        <span>HTML/CSS</span>
-                        <span>SQL</span>
+            <!-- Subjects Taught -->
+            <div class="section">
+                <div class="section-title">Expertise & Subjects Taught</div>
+                <div class="skill-grid">
+                    <div class="skill-category">
+                        <h4>Core CS Subjects</h4>
+                        <p>C Programming, Data Structures, Database Systems, Operating Systems, Computer Networks</p>
                     </div>
-                </div>
-                <div class="skills-column" data-aos="fade-left">
-                    <h3>Subjects Taught</h3>
-                    <div class="skill-tags">
-                        <span>Artificial Intelligence</span>
-                        <span>DBMS</span>
-                        <span>Operating Systems</span>
-                        <span>Computer Networks</span>
-                        <span>Big Data Analytics</span>
-                        <span>Soft Computing</span>
-                        <span>Clean Coding & DevOps</span>
+                    <div class="skill-category">
+                        <h4>AI & Machine Learning</h4>
+                        <p>Artificial Intelligence, Machine Learning, Deep Learning, NLP, Facial Recognition</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Emerging Technologies</h4>
+                        <p>IoT, Big Data Analytics, Cloud Computing, Blockchain, DevOps</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Data Science</h4>
+                        <p>Data Exploration, Visualization, Python Programming, Data Analytics</p>
                     </div>
                 </div>
             </div>
 
-            <div class="certifications mt-5" data-aos="fade-up">
-                <h3>Key Certifications</h3>
-                <div class="cert-grid">
-                    <div class="cert-card">
-                        <i class="fas fa-certificate"></i>
-                        <h4>NPTEL Elite</h4>
-                        <p>Research Methodology, Ethics in Engineering, Accreditation (OBE)</p>
+            <!-- Professional Certifications -->
+            <div class="section">
+                <div class="section-title">Professional Development</div>
+                
+                <div class="achievements">
+                    <h3>NPTEL Certifications (15 Courses)</h3>
+                    <ul>
+                        <li>Elite Grade: OBE, Research Methodology, NATE, Ethics in Engineering, Technical Communication</li>
+                        <li>Specialization: Training for Trainers, Learning Analytics, Entrepreneurship, Educational Leadership</li>
+                    </ul>
+                </div>
+
+                <div class="achievements">
+                    <h3>Faculty Development Programs (30+ Completed)</h3>
+                    <ul>
+                        <li>National and International FDPs in AI, Data Science, DevOps, Cyber Security, NEP 2020</li>
+                        <li>Expertise in Pedagogy, Research Methodology, IPR, and Higher Education</li>
+                    </ul>
+                </div>
+
+                <div class="achievements">
+                    <h3>Technical Certifications</h3>
+                    <ul>
+                        <li>Google Data Analytics Foundation | Full Stack Development | Python Programming</li>
+                        <li>Generative AI Masterclass | Microsoft Excel | Java Servlets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Professional Memberships -->
+            <div class="section">
+                <div class="section-title">Professional Memberships</div>
+                <div class="skill-grid">
+                    <div class="skill-category">
+                        <h4>Associations</h4>
+                        <p>IANEG, IOASD, AICTSD, Institution of Engineers India, ISTE</p>
                     </div>
-                    <div class="cert-card">
-                        <i class="fas fa-certificate"></i>
-                        <h4>Google Data Analytics</h4>
-                        <p>Process Data from Dirty to Clean</p>
-                    </div>
-                    <div class="cert-card">
-                        <i class="fas fa-certificate"></i>
-                        <h4>Microsoft Excel</h4>
-                        <p>Advanced Excel Training</p>
-                    </div>
-                    <div class="cert-card">
-                        <i class="fas fa-certificate"></i>
-                        <h4>Full Stack Development</h4>
-                        <p>ABC Institute of Technology</p>
+                    <div class="skill-category">
+                        <h4>Recognition</h4>
+                        <p>NPTEL Champion, NPTEL Mentor, Yoga Volunteer Member, NPTEL Star Certifications</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-right">
-                <span>05.</span>
-                <h2>Projects</h2>
-            </div>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card" data-aos="fade-up">
-                    <div class="project-content">
-                        <div class="project-top">
-                            <i class="far fa-folder generic-folder"></i>
-                            <div class="project-links">
-                                <!-- Links would go here if available -->
-                            </div>
-                        </div>
-                        <h3 class="project-title">IoT Based Border Alert System</h3>
-                        <p class="project-desc">
-                            A secure system designed for fishermen to sort out issues regarding boundary crossing and safety in the ocean.
-                        </p>
-                        <ul class="project-tech">
-                            <li>Dot.Net</li>
-                            <li>Embedded</li>
-                            <li>IoT</li>
+            <!-- Technical Skills -->
+            <div class="section">
+                <div class="section-title">Technical Skills & Languages</div>
+                <div class="two-column">
+                    <div class="achievements">
+                        <h3>Programming Languages</h3>
+                        <ul>
+                            <li>Python, Java, C/C++, PHP, Embedded Programming</li>
+                            <li>.NET, Django, JavaScript, HTML5, CSS3</li>
                         </ul>
                     </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-content">
-                        <div class="project-top">
-                            <i class="far fa-folder generic-folder"></i>
-                        </div>
-                        <h3 class="project-title">Efficient Pre-Clustering Algorithm</h3>
-                        <p class="project-desc">
-                             Implemented using a K-Means structure to identify clusters in a database efficiently.
-                        </p>
-                        <ul class="project-tech">
-                            <li>PHP</li>
-                            <li>Data Mining</li>
-                            <li>Algorithms</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-content">
-                        <div class="project-top">
-                            <i class="far fa-folder generic-folder"></i>
-                        </div>
-                        <h3 class="project-title">E-Vehicle Number Plate ID</h3>
-                        <p class="project-desc">
-                            An electronic chip-based number plate system to identify theft vehicles using microcontrollers.
-                        </p>
-                        <ul class="project-tech">
-                            <li>Microcontroller</li>
-                            <li>Embedded C</li>
-                            <li>Hardware</li>
+                    <div class="achievements">
+                        <h3>Languages (Communication)</h3>
+                        <ul>
+                            <li>English (Fluent) | Tamil (Native)</li>
+                            <li>Malayalam, Kannada, Telugu (Conversational)</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container contact-container">
-            <div class="section-title center-title" data-aos="fade-down">
-                <span>06.</span>
-                <h2>Get In Touch</h2>
+            <!-- Work Experience -->
+            <div class="section">
+                <div class="section-title">Career Progression</div>
+                
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Assistant Professor (AI&DS)</div>
+                        <div class="entry-meta">Aug 2021 – July 2023</div>
+                    </div>
+                    <div class="entry-subtitle">Dhanalakshmi Srinivasan College of Engineering (Autonomous)</div>
+                    <div class="entry-description">• Class Coordinator for 2nd year AI&DS students | • Taught 4 core subjects with 70%+ performance</div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Assistant Professor (IT)</div>
+                        <div class="entry-meta">Jan 2021 – Aug 2021</div>
+                    </div>
+                    <div class="entry-subtitle">VSB College of Engineering (Autonomous), Coimbatore</div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Technical Support Engineer</div>
+                        <div class="entry-meta">May 2019 – Nov 2019</div>
+                    </div>
+                    <div class="entry-subtitle">Sterna Security Solutions Pvt Ltd</div>
+                    <div class="entry-description">• Monitored Indian Oil refinery servers and infrastructure</div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Systems Engineer</div>
+                        <div class="entry-meta">May 2016 – Apr 2017</div>
+                    </div>
+                    <div class="entry-subtitle">Best Academy for Advanced Learning</div>
+                </div>
             </div>
-            <p class="contact-text" data-aos="fade-up">
-                I am currently open to new opportunities in academia and research. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-            </p>
-            <a href="mailto:uthayakumar.j89@gmail.com" class="btn primary-btn big-btn" data-aos="zoom-in">Say Hello</a>
-            
-            <div class="contact-details mt-5">
-                <p><i class="fas fa-map-marker-alt"></i> 19, Third Street, Shree Vaari Gardens, Coimbatore-641025</p>
-                <p><i class="fas fa-phone"></i> +91 9342719285</p>
+
+            <!-- Key Projects -->
+            <div class="section">
+                <div class="section-title">Innovative Projects</div>
+                
+                <div class="entry">
+                    <div class="entry-title">IoT Based Border Alert System for Fishermen</div>
+                    <div class="entry-description">Developed solution using Dot.Net and Embedded Programming to prevent ocean-related incidents</div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-title">E-Vehicle Number Plate Identification</div>
+                    <div class="entry-description">Electronic chip-based vehicle theft detection system using microcontroller technology</div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-title">K-Means Pre-Clustering Algorithm</div>
+                    <div class="entry-description">Database optimization algorithm implementation using PHP (Team of 4)</div>
+                </div>
+            </div>
+
+            <!-- Achievements Highlight -->
+            <div class="achievements" style="background: #f0f4ff; border-left: 4px solid #764ba2;">
+                <h3 style="color: #764ba2;">Key Highlights</h3>
+                <ul>
+                    <li>9+ years of combined academic and industry experience</li>
+                    <li>15+ publications in Scopus, IEEE, Web of Science, and UGC CARE indexed journals</li>
+                    <li>8 approved patents in AI, IoT, Blockchain, and Healthcare</li>
+                    <li>Teaching excellence with 100% performance in AI Analyst course</li>
+                    <li>30+ Faculty Development Programs completed for continuous growth</li>
+                    <li>Active research contributor with 5+ ongoing projects</li>
+                    <li>Strong mentoring record with diverse student cohorts</li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="social-links-footer">
-            <a href="https://www.linkedin.com/in/uthayakumarj/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="mailto:uthayakumar.j89@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p>Designed & Built by Uthayakumar J.</p>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    </div>
 </body>
 </html>
